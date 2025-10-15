@@ -128,3 +128,131 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Define the detailed information object with Top Colleges
+    const careerDetails = {
+        'engineering': {
+            title: 'Engineering (BTech)',
+            details: `
+                **Why Join:** Offers diverse specializations, high earning potential, and a direct path to the tech and industrial sectors. It’s ideal for problem-solvers who enjoy applying physics and math to create practical solutions.
+                <br><br>
+                **Entrance Exams:** **JEE Main/Advanced** (for IITs/NITs), **BITSAT**, **VITEEE**, and various state-level engineering entrance exams.
+                <br><br>
+                **Top Colleges:** **IITs (Indian Institutes of Technology)**, **NITs (National Institutes of Technology)**, **BITS Pilani**, **IIITs (Indian Institutes of Information Technology)**.
+            `
+        },
+        'bsc': {
+            title: 'BSc Programs',
+            details: `
+                **Why Join:** Provides a strong academic foundation for a career in **research, teaching**, or **data analytics**. New fields like Data Science offer rapidly growing job opportunities.
+                <br><br>
+                **Entrance Exams:** Primarily based on **12th Board Marks**. Some top universities require exams like **CUET** (Central University Entrance Test) or college-specific aptitude tests.
+                <br><br>
+                **Top Colleges:** **Delhi University (DU) Colleges (e.g., St. Stephen's, Hindu)**, **Presidency University (Kolkata)**, **Madras Christian College (MCC)**, **IISc Bangalore (for B.S.)**.
+            `
+        },
+        'ca': {
+            title: 'Chartered Accountancy (CA)',
+            details: `
+                **Why Join:** A highly reputed and lucrative professional qualification. CAs handle finance, taxation, and auditing, placing them in key decision-making roles in any organization.
+                <br><br>
+                **Entrance Exams:** **ICAI CA Foundation Exam** (can be attempted after 12th). The process involves multiple stages: Foundation, Intermediate, and Final.
+                <br><br>
+                **Top Colleges (for B.Com base):** **SRCC Delhi**, **Loyola College Chennai**, **HR College of Commerce (Mumbai)**. (Note: CA is managed by the **Institute of Chartered Accountants of India - ICAI**, not traditional colleges).
+            `
+        },
+        'hotel-management': {
+            title: 'Hotel Management',
+            details: `
+                **Why Join:** Ideal for individuals with excellent **communication skills** and a passion for customer service, management, and global travel. Leads to careers in luxury hotels, airlines, cruise ships, and event management.
+                <br><br>
+                **Entrance Exams:** **NCHMCT JEE** (National Council for Hotel Management and Catering Technology Joint Entrance Exam), **AIMA UGAT**, or university-specific tests.
+                <br><br>
+                **Top Colleges:** **IHM Pusa (Delhi)**, **IHM Mumbai**, **WelcomGroup Graduate School of Hotel Administration (WGSHA)**, **Institute of Hotel Management, Bangalore**.
+            `
+        },
+        'architecture': {
+            title: 'Architecture',
+            details: `
+                **Why Join:** Combines **artistic vision** with **technical engineering** knowledge. You design and plan buildings and public spaces, shaping the physical environment around us.
+                <br><br>
+                **Entrance Exams:** **NATA** (National Aptitude Test in Architecture) and **JEE Main Paper 2** (for B.Arch programs in NITs/IITs and centrally funded institutions).
+                <br><br>
+                **Top Colleges:** **SPA Delhi (School of Planning and Architecture)**, **IIT Kharagpur**, **CEPT University (Ahmedabad)**, **Jadavpur University (Kolkata)**.
+            `
+        },
+        'aviation': {
+            title: 'Aviation',
+            details: `
+                **Why Join:** Pursue an exciting and highly skilled career, whether as a **Commercial Pilot** (high pay, unique lifestyle) or an **Aeronautical Engineer** (designing and maintaining aircraft).
+                <br><br>
+                **Entrance Exams:**
+                * **Pilot:** Requires clearing a class 2 medical exam, aptitude tests, and getting admission into a flying club.
+                * **Engineering:** **JEE Main/Advanced** (for Aeronautical/Aerospace Engineering degrees).
+                <br><br>
+                **Top Institutes (Flying):** **Indira Gandhi Rashtriya Uran Akademi (IGRUA)**, **Bombay Flying Club**.
+                **Top Institutes (Engineering):** **IIT Bombay**, **Madras Institute of Technology (MIT Chennai)**.
+            `
+        },
+        'defence': {
+            title: 'Defence Services',
+            details: `
+                **Why Join:** A career of honor, adventure, and selfless service to the nation. Offers rigorous training, excellent pay, and a disciplined life structure. MPC students can apply for the **Technical Arms**.
+                <br><br>
+                **Entrance Exams:** **NDA (National Defence Academy) Entrance Exam** (written exam conducted by UPSC, followed by SSB Interview).
+                <br><br>
+                **Top Institutes:** **National Defence Academy (NDA) Pune** (The primary training ground). Other technical entries come through **Indian Naval Academy (INA)** and **Air Force Academy (AFA)**.
+            `
+        },
+        'research': {
+            title: 'Research Programs',
+            details: `
+                **Why Join:** These programs are for students who have a deep curiosity in fundamental science. They offer early exposure to **cutting-edge research**, high stipends, and pathways to becoming a top scientist or professor.
+                <br><br>
+                **Entrance Exams:** **IISER Aptitude Test (IAT)**, **NEST** (for NISER), and certain admissions via **JEE Advanced** or **KVPY** scores.
+                <br><br>
+                **Top Institutes:** **IISERs (Indian Institutes of Science Education and Research)**, **NISER Bhubaneswar**, **IISc Bangalore (B.S. program)**.
+            `
+        }
+    };
+
+    // The function to reset the display container content
+    const resetDisplay = () => {
+        return '<p class="initial-message">Click on a "Show Details" button to learn more about the program requirements and entrance exams.</p>';
+    };
+
+    // 2. Select the display container and all the buttons
+    const displayContainer = document.getElementById('detailed-info-display');
+    const detailButtons = document.querySelectorAll('.show-details-btn');
+
+    // 3. Add event listener to each button
+    detailButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const infoKey = button.getAttribute('data-info-key');
+            const info = careerDetails[infoKey];
+
+            if (info) {
+                // Construct the HTML content with a CLOSE button
+                const htmlContent = `
+                    <div class="detailed-card animate-fadeIn">
+                        <h4>${info.title} - Program Details</h4>
+                        <p>${info.details}</p>
+                        <button class="close-details-btn">Close Details</button>
+                    </div>
+                `;
+
+                // Inject the content
+                displayContainer.innerHTML = htmlContent;
+
+                // Scroll the container into view (Optional: helps on smaller screens)
+                displayContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+                // Add functionality to the new 'Close Details' button
+                document.querySelector('.close-details-btn').addEventListener('click', () => {
+                    displayContainer.innerHTML = resetDisplay();
+                });
+            }
+        });
+    });
+});

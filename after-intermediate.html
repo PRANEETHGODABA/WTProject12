@@ -56,46 +56,66 @@
             </div>
         </section>
 
-        <!-- Career Options -->
-        <section class="career-options">
-            <div class="container">
-                <h3>Popular Career Options After MPC</h3>
-                <div class="options-grid">
-                    <div class="option-card">
-                        <h4>Engineering (BTech)</h4>
-                        <p>Computer Science, Electronics, Mechanical, Civil, Electrical and more specializations</p>
-                    </div>
-                    <div class="option-card">
-                        <h4>BSc Programs</h4>
-                        <p>Physics, Mathematics, Chemistry, Data Science, Statistics</p>
-                    </div>
-                    <div class="option-card">
-                        <h4>Chartered Accountancy (CA)</h4>
-                        <p>Professional accounting qualification with excellent career prospects</p>
-                    </div>
-                    <div class="option-card">
-                        <h4>Hotel Management</h4>
-                        <p>Hospitality and hotel administration programs</p>
-                    </div>
-                    <div class="option-card">
-                        <h4>Architecture</h4>
-                        <p>5-year BArch program for creative engineering minds</p>
-                    </div>
-                    <div class="option-card">
-                        <h4>Aviation</h4>
-                        <p>Commercial pilot training, aeronautical engineering</p>
-                    </div>
-                    <div class="option-card">
-                        <h4>Defence Services</h4>
-                        <p>NDA, Navy, Air Force technical entries</p>
-                    </div>
-                    <div class="option-card">
-                        <h4>Research Programs</h4>
-                        <p>Integrated MSc, BS programs in IISERs, NITs</p>
-                    </div>
-                </div>
+       <section class="career-options">
+    <div class="container">
+        <h3>Popular Career Options After MPC</h3>
+        <div class="options-grid">
+
+            <div class="option-card" data-option="engineering">
+                <h4>Engineering (BTech)</h4>
+                <p>Computer Science, Electronics, Mechanical, Civil, Electrical and more specializations</p>
+                <button class="show-details-btn" data-info-key="engineering">Show Details</button>
             </div>
-        </section>
+
+            <div class="option-card" data-option="bsc">
+                <h4>BSc Programs</h4>
+                <p>Physics, Mathematics, Chemistry, Data Science, Statistics</p>
+                <button class="show-details-btn" data-info-key="bsc">Show Details</button>
+            </div>
+
+            <div class="option-card" data-option="ca">
+                <h4>Chartered Accountancy (CA)</h4>
+                <p>Professional accounting qualification with excellent career prospects</p>
+                <button class="show-details-btn" data-info-key="ca">Show Details</button>
+            </div>
+
+            <div class="option-card" data-option="hotel-management">
+                <h4>Hotel Management</h4>
+                <p>Hospitality and hotel administration programs</p>
+                <button class="show-details-btn" data-info-key="hotel-management">Show Details</button>
+            </div>
+
+            <div class="option-card" data-option="architecture">
+                <h4>Architecture</h4>
+                <p>5-year BArch program for creative engineering minds</p>
+                <button class="show-details-btn" data-info-key="architecture">Show Details</button>
+            </div>
+
+            <div class="option-card" data-option="aviation">
+                <h4>Aviation</h4>
+                <p>Commercial pilot training, aeronautical engineering</p>
+                <button class="show-details-btn" data-info-key="aviation">Show Details</button>
+            </div>
+
+            <div class="option-card" data-option="defence">
+                <h4>Defence Services</h4>
+                <p>NDA, Navy, Air Force technical entries</p>
+                <button class="show-details-btn" data-info-key="defence">Show Details</button>
+            </div>
+
+            <div class="option-card" data-option="research">
+                <h4>Research Programs</h4>
+                <p>Integrated MSc, BS programs in IISERs, NITs</p>
+                <button class="show-details-btn" data-info-key="research">Show Details</button>
+            </div>
+
+        </div>
+
+        <div id="detailed-info-display" class="details-container animate-fadeIn">
+            <p class="initial-message">Click on a "Show Details" button to learn more about the program requirements and entrance exams.</p>
+        </div>
+    </div>
+</section>
 
         <!-- Competitive Exams -->
         <section class="competitive-exams">
@@ -306,53 +326,77 @@
 
         <!-- Career Options -->
         <section class="career-options">
-            <div class="container">
-                <h3>Popular Career Options After BiPC</h3>
-                <div class="options-grid">
-                    <div class="option-card">
-                        <h4>MBBS</h4>
-                        <p>Bachelor of Medicine and Bachelor of Surgery - become a doctor</p>
-                    </div>
-                    <div class="option-card">
-                        <h4>BDS</h4>
-                        <p>Bachelor of Dental Surgery - dental medicine career</p>
-                    </div>
-                    <div class="option-card">
-                        <h4>BAMS</h4>
-                        <p>Bachelor of Ayurvedic Medicine and Surgery</p>
-                    </div>
-                    <div class="option-card">
-                        <h4>BHMS</h4>
-                        <p>Bachelor of Homeopathic Medicine and Surgery</p>
-                    </div>
-                    <div class="option-card">
-                        <h4>B.Pharmacy</h4>
-                        <p>Pharmaceutical sciences and drug development</p>
-                    </div>
-                    <div class="option-card">
-                        <h4>Nursing (BSc/BNS)</h4>
-                        <p>Healthcare and patient care specialist</p>
-                    </div>
-                    <div class="option-card">
-                        <h4>Biotechnology</h4>
-                        <p>BTech/BSc in Biotechnology, genetic engineering</p>
-                    </div>
-                    <div class="option-card">
-                        <h4>Physiotherapy (BPT)</h4>
-                        <p>Rehabilitation and physical therapy</p>
-                    </div>
-                    <div class="option-card">
-                        <h4>Veterinary Science</h4>
-                        <p>BVSc - Animal healthcare and medicine</p>
-                    </div>
-                    <div class="option-card">
-                        <h4>Allied Health Sciences</h4>
-                        <p>Medical lab technology, radiology, nutrition</p>
-                    </div>
-                </div>
+    <div class="container">
+        <h3>Popular Career Options After BiPC</h3>
+        <div class="options-grid">
+            
+            <div class="option-card">
+                <h4>MBBS</h4>
+                <p>Bachelor of Medicine and Bachelor of Surgery - become a doctor</p>
+                <button class="show-details-btn" data-info-key="mbbs">Show Details</button>
             </div>
-        </section>
 
+            <div class="option-card">
+                <h4>BDS</h4>
+                <p>Bachelor of Dental Surgery - dental medicine career</p>
+                <button class="show-details-btn" data-info-key="bds">Show Details</button>
+            </div>
+
+            <div class="option-card">
+                <h4>BAMS</h4>
+                <p>Bachelor of Ayurvedic Medicine and Surgery</p>
+                <button class="show-details-btn" data-info-key="bams">Show Details</button>
+            </div>
+
+            <div class="option-card">
+                <h4>BHMS</h4>
+                <p>Bachelor of Homeopathic Medicine and Surgery</p>
+                <button class="show-details-btn" data-info-key="bhms">Show Details</button>
+            </div>
+
+            <div class="option-card">
+                <h4>B.Pharmacy</h4>
+                <p>Pharmaceutical sciences and drug development</p>
+                <button class="show-details-btn" data-info-key="bpharmacy">Show Details</button>
+            </div>
+
+            <div class="option-card">
+                <h4>Nursing (BSc/BNS)</h4>
+                <p>Healthcare and patient care specialist</p>
+                <button class="show-details-btn" data-info-key="nursing">Show Details</button>
+            </div>
+
+            <div class="option-card">
+                <h4>Biotechnology</h4>
+                <p>BTech/BSc in Biotechnology, genetic engineering</p>
+                <button class="show-details-btn" data-info-key="biotechnology">Show Details</button>
+            </div>
+
+            <div class="option-card">
+                <h4>Physiotherapy (BPT)</h4>
+                <p>Rehabilitation and physical therapy</p>
+                <button class="show-details-btn" data-info-key="physiotherapy">Show Details</button>
+            </div>
+
+            <div class="option-card">
+                <h4>Veterinary Science</h4>
+                <p>BVSc - Animal healthcare and medicine</p>
+                <button class="show-details-btn" data-info-key="veterinary">Show Details</button>
+            </div>
+
+            <div class="option-card">
+                <h4>Allied Health Sciences</h4>
+                <p>Medical lab technology, radiology, nutrition</p>
+                <button class="show-details-btn" data-info-key="allied-health">Show Details</button>
+            </div>
+            
+        </div>
+        
+        <div id="detailed-info-display" class="details-container animate-fadeIn">
+            <p class="initial-message">Click on a "Show Details" button to learn more about the program requirements and top colleges.</p>
+        </div>
+    </div>
+</section>
         <!-- Competitive Exams -->
         <section class="competitive-exams">
             <div class="container">
