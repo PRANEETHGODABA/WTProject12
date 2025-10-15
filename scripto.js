@@ -71,7 +71,7 @@ function handleSubmit(event) {
 
     console.log('Form submitted:', formData);
 
-    window.location.href = 'index.html';
+    window.location.href = 'indexo.html';
 }
 
 function handleSocialLogin(provider) {
