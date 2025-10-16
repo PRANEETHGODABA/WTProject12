@@ -231,7 +231,7 @@ body::before {
 
 /* Hero Section */
 .hero {
-    background-image: url('images/100928726.png');
+    background-image: url('images/1000228052.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -240,7 +240,7 @@ body::before {
     /* Set minimum height to ensure full viewport coverage, if needed for the body */
     min-height: 75vh;
     margin: 2px; 
-    color: var(--text-primary);
+    color: whitesmoke;
     padding: 120px 20px;
     text-align: center;
     position: relative;

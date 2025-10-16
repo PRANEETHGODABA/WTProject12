@@ -215,6 +215,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 **Top Institutes:** **IISERs (Indian Institutes of Science Education and Research)**, **NISER Bhubaneswar**, **IISc Bangalore (B.S. program)**.
             `
         }
+
+        
+        
     };
 
     // The function to reset the display container content
